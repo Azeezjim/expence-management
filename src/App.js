@@ -9,7 +9,7 @@ function App() {
         container
         spacing={0}
         align="center"
-        justify="center"
+        // justify="center"
         style={{ height: "100vh" }}
       >
         <Grid item xs={12} sm={4}>
