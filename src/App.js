@@ -1,4 +1,6 @@
 import Details from "./componenta/Details/Details";
+import Main from "./componenta/Main/Main";
+
 
 import { Grid } from "@material-ui/core";
 import  useStyles  from "./styles";
@@ -20,7 +22,7 @@ function App() {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          Main
+          <Main />
         </Grid>
 
         <Grid item xs={12} sm={4}>
