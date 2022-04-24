@@ -1,19 +1,22 @@
 import Details from "./componenta/Details/Details";
 
 import { Grid } from "@material-ui/core";
+import  useStyles  from "./styles";
 
 function App() {
+  const classes = useStyles();
   return (
     <div>
-      <Grid
+      <Grid 
+        className={classes.grid}
         container
         spacing={0}
-        align="center"
-        // justify="center"
+        alignItems="center"
+        justify="center"
         style={{ height: "100vh" }}
       >
         <Grid item xs={12} sm={4}>
-          <Details />
+          <Details title="Income"/>
         </Grid>
 
         <Grid item xs={12} sm={4}>
@@ -21,7 +24,7 @@ function App() {
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          <Details />
+          <Details title="Expence" />
         </Grid>
       </Grid>
     </div>
