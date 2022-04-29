@@ -10,7 +10,7 @@ const Details = ( { title } ) => {
   const classes = useStyles();
 
   return (
-    <Card className={title === "incomr" ? classes.income : classes.expense}>
+    <Card className={title === "Income" ? classes.income : classes.expense}>
       <CardHeader title={title} />
       <CardContent>
         <Typography variant="h5">$50</Typography> 
