@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import {List as MUIList, ListItem, ListItemText, ListItemAvatar, Avatar, ListItemSecondaryAction, IconButton, Slide} from '@material-ui/core';
 import { Delete, MoneyOff } from '@material-ui/icons';
 import { mergeClasses } from '@material-ui/styles';
 
+import { ExpenseTrackerContext } from '../../../context/context';
 import useStyle from './styles';
 
 const List = () => {
   const classes = useStyle();
+  const globalState = useContext(ExpenseTrackerContext);
+  console.log("globalState", globalState);
+
   const transactions = [
     {
       id: 1,
