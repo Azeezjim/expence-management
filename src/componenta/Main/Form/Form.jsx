@@ -7,8 +7,7 @@ import {
   Typography,
   FormControl,
   InputLabel,
-  Select,
-  MenuItem,
+  MenuItem, 
   TextField,
 } from "@material-ui/core";
 
@@ -44,13 +43,14 @@ const Form = () => {
         </FormControl>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={6}>
         <TextField type="number" label="Amount" fullWidth></TextField>
       </Grid>
 
-      <Grid item xs={12}>
+      <Grid item xs={6}>
         <TextField type="date" label="Date" fullWidth></TextField>
       </Grid>
+      <Button className={classes.button} variant="outlined" color="primary" fullWidth>Create</Button>
     </Grid>
   );
 };
