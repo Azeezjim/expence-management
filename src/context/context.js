@@ -6,7 +6,7 @@ export const ExpenseTrackerContext = createContext(InitialState)
 
 export const Provider = ( { children } ) => {
   return (
-    <ExpenseTrackerContext.Provider {{appName: "Expence Tracker"}}>
+    <ExpenseTrackerContext.Provider value = {{ appName: "Expence Tracker"}}>
       {children}
     </ExpenseTrackerContext.Provider>
   )
