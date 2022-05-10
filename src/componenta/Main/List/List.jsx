@@ -8,8 +8,7 @@ import useStyle from './styles';
 
 const List = () => {
   const classes = useStyle();
-  const globalState = useContext(ExpenseTrackerContext);
-  console.log("globalState", globalState);
+  const { deleteTransaction } = useContext(ExpenseTrackerContext);
 
   const transactions = [
     {
@@ -57,4 +56,4 @@ const List = () => {
   )
 } 
 
-export default List
+export default List 
