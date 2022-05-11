@@ -33,7 +33,7 @@ const Form = () => {
       <Grid item xm={6}>
         <FormControl fullWidth>
           <InputLabel>Type</InputLabel>
-          <Select>
+          <Select value={formData.type} onChange={(e) => setFormData({ ...formData, })}>
             <MenuItem value="Income">Income</MenuItem>
             <MenuItem value="Expense">Expense</MenuItem>
           </Select>
