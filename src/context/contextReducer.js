@@ -10,7 +10,7 @@ let transactions;
       return transactions;
 
     case "ADD_TRANSACTION":
-      transactions = [action.payload,  ...state]
+      transactions = [action.payload, ...state]
 
       return transactions;
     default:

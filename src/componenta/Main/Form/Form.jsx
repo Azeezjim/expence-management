@@ -1,6 +1,5 @@
-import React from "react";
+import React, {} from "react";
 import {
-  TestField,
   Grid,
   Select,
   Button,
@@ -12,6 +11,13 @@ import {
 } from "@material-ui/core";
 
 import useStyles from "./styles";
+
+const initialState ={
+  amount: "",
+  catigory: "",
+  type: "",
+  adte: new Date(),
+}
 
 const Form = () => {
   const classes = useStyles();
@@ -25,7 +31,7 @@ const Form = () => {
 
       <Grid item xm={6}>
         <FormControl fullWidth>
-          <inpuytLabel>Type</inpuytLabel>
+          <InputLabel>Type</InputLabel>
           <Select>
             <MenuItem value="Income">Income</MenuItem>
             <MenuItem value="Expense">Expense</MenuItem>
@@ -35,7 +41,7 @@ const Form = () => {
 
       <Grid item xs={6}>
         <FormControl fullWidth>
-          <inpuytLabel>Catigory</inpuytLabel>
+          <InputLabel>Catigory</InputLabel>
           <Select>
             <MenuItem value="business">Business</MenuItem>
             <MenuItem value="salaty">Salaty</MenuItem>
