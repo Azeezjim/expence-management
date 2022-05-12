@@ -21,7 +21,9 @@ const initialState ={
 
 const Form = () => {
   const classes = useStyles();
-  const [formData, setFormData] = useState(initialState);
+  // const [formData, setFormData] = useState(initialState);
+
+  console.log("formData", formData);
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
@@ -43,19 +45,19 @@ const Form = () => {
       <Grid item xs={6}>
         <FormControl fullWidth>
           <InputLabel>Catigory</InputLabel>
-          <Select>
+          <Select value={formData.catigory} onChange={(e) =>setFormData({ ...formData, catigory: e.target.value})}>
             <MenuItem value="business">Business</MenuItem>
             <MenuItem value="salaty">Salaty</MenuItem>
           </Select>
         </FormControl>
+      </Grid> 
+
+      <Grid item xs={6}>
+        <TextField type="number" label="Amount" fullWidth value={formData.amount} onChange={(e) =>setFormData({ ...formData, amount : e.target.value}) } ></TextField>
       </Grid>
 
       <Grid item xs={6}>
-        <TextField type="number" label="Amount" fullWidth></TextField>
-      </Grid>
-
-      <Grid item xs={6}>
-        <TextField type="date" label="Date" fullWidth></TextField>
+        <TextField type="date" label="Date" fullWidth value={formData.date } onChange={(e) =>setFormData({ ...formData, date: e.target.value}) }></TextField>
       </Grid>
       <Button className={classes.button} variant="outlined" color="primary" fullWidth>Create</Button>
     </Grid>
