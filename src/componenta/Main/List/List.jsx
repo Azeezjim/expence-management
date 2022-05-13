@@ -47,7 +47,7 @@ const List = () => {
             <ListItemSecondaryAction>
               <IconButton edge="end" aria-label="delete" onClick=" ">
                 <Delete />
-              </IconButton> 
+              </IconButton>   
             </ListItemSecondaryAction>
           </ListItem>
         </Slide>
