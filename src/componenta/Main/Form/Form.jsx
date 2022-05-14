@@ -25,7 +25,7 @@ const Form = () => {
   const classes = useStyles();
   const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
-  
+
   const createTransaction = () => {
     const transaction = { 
       ...formData,
@@ -35,7 +35,7 @@ const Form = () => {
     addTransaction(transaction);
     setFormData(initialState);
 
-    addTransaction();
+    // addTransaction();
   };
 
   // console.log("formData", formData);y
@@ -98,7 +98,7 @@ const Form = () => {
         className={classes.button}
         variant="outlined"
         color="primary"
-        fullWidth
+        fullWidth 
         onClick={createTransaction}
       >
         Create
