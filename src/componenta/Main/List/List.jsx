@@ -45,7 +45,7 @@ const List = () => {
             </ListItemAvatar>
             <ListItemText primary={transaction.catigory} secondary={`$${transaction.amount} - ${transaction.date}`} />
             <ListItemSecondaryAction>
-              <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction.id)}>
+              <IconButton edge="end" aria-label="delete" onClick={() => deleteTransaction(transaction)}>
                 <Delete />
               </IconButton>   
             </ListItemSecondaryAction>
