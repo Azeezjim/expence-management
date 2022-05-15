@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { ExpenseTrackerContext } from "../../../context/context";
 import { v4 as uuidv4 } from "uuid";
-import { incomeCategories, expenseCatigories } from "../../../constants/catigories";
+import { incomeCategories, expenseCategories } from "../../../constants/catigories";
 
 
 import useStyles from "./styles";
@@ -40,7 +40,7 @@ const Form = () => {
     // addTransaction(); 
   };
 
-  const selectedCarigory = formData.type === 'income' ? incomeCategories : expenseCatigories;
+  const selectedCarigories = formData.type === 'income' ? incomeCategories : expenseCategories; 
 
   // console.log("formData", formData);y
   return (
@@ -73,8 +73,11 @@ const Form = () => {
               setFormData({ ...formData, catigory: e.target.value })
             }
           >
-            <MenuItem value="business">Business</MenuItem>
-            <MenuItem value="salaty">Salaty</MenuItem>
+            { selectedCarigories.map((c) => 
+            <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>
+            )}
+            {/* <MenuItem value="business">Business</MenuItem>
+            <MenuItem value="salaty">Salaty</MenuItem> */}
           </Select>
         </FormControl>
       </Grid>
