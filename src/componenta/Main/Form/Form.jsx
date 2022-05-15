@@ -11,6 +11,8 @@ import {
 } from "@material-ui/core";
 import { ExpenseTrackerContext } from "../../../context/context";
 import { v4 as uuidv4 } from "uuid";
+import { incomeCategories, expenseCatigories } from "../../../constants/catigories";
+
 
 import useStyles from "./styles";
 
@@ -35,8 +37,10 @@ const Form = () => {
     addTransaction(transaction);
     setFormData(initialState);
 
-    // addTransaction();
+    // addTransaction(); 
   };
+
+  const selectedCarigory = formData.type === 'income' ? incomeCategories : expenseCatigories;
 
   // console.log("formData", formData);y
   return (
