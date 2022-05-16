@@ -21,7 +21,7 @@ const initialState = {
   amount: "",
   catigory: "",
   type: "",
-  adte: formatDate(new Date()),
+  date: formatDate(new Date()),
 };
 
 const Form = () => {
@@ -99,7 +99,7 @@ const Form = () => {
           label="Date"
           fullWidth
           value={formData.date}
-          onChange={(e) => setFormData({ ...formData, date: formData(e.target.value) })}
+          onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })}
         ></TextField>
       </Grid>
       <Button
