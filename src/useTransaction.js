@@ -5,7 +5,7 @@ import { incomeCtigories, expenseCatigories, resetCatigories } from "./constants
 
 const useTransaction = (titles) => {
   resetCatigories(); 
-  const 
+  const { transactions } = useContext(ExpenseTrackerContext)
 }
 
 export default useTransaction
