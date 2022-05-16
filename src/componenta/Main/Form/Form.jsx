@@ -11,7 +11,7 @@ import {
 } from "@material-ui/core";
 import { ExpenseTrackerContext } from "../../../context/context";
 import { v4 as uuidv4 } from "uuid";
-import { incomeCategories, expenseCategories } from "../../../constants/catigories";
+import { incomeCategories, expenseCategories } from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 
 
