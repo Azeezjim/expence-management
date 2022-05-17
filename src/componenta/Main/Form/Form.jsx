@@ -41,7 +41,7 @@ const Form = () => {
     // addTransaction(); 
   };
 
-  const selectedCaregories = formData.type === 'income' ? incomeCategories : expenseCategories; 
+  const selectedCaregories = formData.type === 'Income' ? incomeCategories : expenseCategories; 
 
   // console.log("formData", formData);y
   return (
