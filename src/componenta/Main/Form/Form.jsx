@@ -19,7 +19,7 @@ import useStyles from "./styles";
 
 const initialState = {
   amount: "",
-  catigory: "",
+  category: "",
   type: "",
   date: formatDate(new Date()),
 };
@@ -41,7 +41,7 @@ const Form = () => {
     // addTransaction(); 
   };
 
-  const selectedCarigories = formData.type === 'income' ? incomeCategories : expenseCategories; 
+  const selectedCaregories = formData.type === 'income' ? incomeCategories : expenseCategories; 
 
   // console.log("formData", formData);y
   return (
@@ -67,14 +67,14 @@ const Form = () => {
 
       <Grid item xs={6}>
         <FormControl fullWidth>
-          <InputLabel>Catigory</InputLabel>
+          <InputLabel>Category</InputLabel>
           <Select
-            value={formData.catigory}
+            value={formData.category}
             onChange={(e) =>
-              setFormData({ ...formData, catigory: e.target.value })
+              setFormData({ ...formData, category: e.target.value })
             }
           >
-            { selectedCarigories.map((c) => 
+            { selectedCaregories.map((c) => 
             <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>
             )}
             {/* <MenuItem value="business">Business</MenuItem>
