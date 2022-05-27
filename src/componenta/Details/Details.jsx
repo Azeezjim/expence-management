@@ -5,7 +5,7 @@ import { Doughnut } from 'react-chartjs-2';
 import useTransactions from '../../useTransactions';
 
 // eslint-disable-next-line no-unused-vars
-import useStyles from "./styles"
+import useStyles from "./styles";
 
 
 const Details = ( { title } ) => {

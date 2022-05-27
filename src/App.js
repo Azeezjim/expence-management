@@ -11,21 +11,21 @@ function App() {
     <div>
       <Grid 
         className={classes.grid}
-        container
-        spacing={0}
+        container spacing={0}
         alignItems="center"
         justifyContent="center"
         style={{ height: "100vh" }}
       >
-        <Grid item xs={12} sm={4} className={classes.mobile}>
-          <Details title="Income"/>
+        <Grid item xs={12} sm={2} >
+          <Details title="Income" />
         </Grid>
-
-        <Grid item xs={12} sm={3} className={classes.main}>
+        <Grid item xs={12} sm={3} >
           <Main />
         </Grid>
-
-        <Grid item xs={12} sm={4}>
+        {/* <Grid item xs={12} sm={4} >
+          <Details title="Income" />
+        </Grid> */}
+        <Grid item xs={12} sm={2} >
           <Details title="Expense" />
         </Grid>
       </Grid>
