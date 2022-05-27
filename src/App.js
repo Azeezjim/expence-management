@@ -17,16 +17,16 @@ function App() {
         justifyContent="center"
         style={{ height: "100vh" }}
       >
-        <Grid item xs={12} sm={4}>
+        <Grid item xs={12} sm={4} className={classes.mobile}>
           <Details title="Income"/>
         </Grid>
 
-        <Grid item xs={12} sm={3}>
+        <Grid item xs={12} sm={3} className={classes.main}>
           <Main />
         </Grid>
 
         <Grid item xs={12} sm={4}>
-          <Details title="Expence" />
+          <Details title="Expense" />
         </Grid>
       </Grid>
     </div>
