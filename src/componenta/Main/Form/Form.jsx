@@ -11,10 +11,12 @@ import {
 } from "@material-ui/core";
 import { ExpenseTrackerContext } from "../../../context/context";
 import { v4 as uuidv4 } from "uuid";
-import { incomeCategories, expenseCategories } from "../../../constants/categories";
+import {
+  incomeCategories,
+  expenseCategories,
+} from "../../../constants/categories";
 import formatDate from "../../../utils/formatDate";
 import { useSpeechContext } from "@speechly/react-client";
-
 
 import useStyles from "./styles";
 import { AirlineSeatLegroomNormalTwoTone } from "@material-ui/icons";
@@ -30,10 +32,10 @@ const Form = () => {
   const classes = useStyles();
   const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
-  const { segment } = useSpeechContext()
+  const { segment } = useSpeechContext();
 
   const createTransaction = () => {
-    const transaction = { 
+    const transaction = {
       ...formData,
       amount: Number(formData.amount),
       id: uuidv4(),
@@ -41,18 +43,31 @@ const Form = () => {
     addTransaction(transaction);
     setFormData(initialState);
 
-    // addTransaction(); 
+    // addTransaction();
   };
 
-  useEffect() = () => {
-    if(segment) {
-      if(segment.intent.intent === "add_expense"){
-        setFormData({ ...formData, type: "Expense"});
+  useEffect(() => {
+    if (segment) {
+      if (segment.intent.intent === "add_expense") {
+        setFormData({ ...formData, type: "Expense" });
+      } else if (segment.intent.intent === "add_income") {
+        setFormData({ ...formData, type: "Income" });
+      } else if (
+        segment.isFinal &&
+        segment.intent.intent === "creat_transaction"
+      ) {
+        return createTransaction();
+      } else if (segment.isFinal && segment.intent.intent) {
+        return setFormData(initialState);
+      }
+      segment.entities.forEach(e) => {
+        console.log("entities", e.value);
       }
     }
-  }, [segment]}
+  }, [segment]);
 
-  const selectedCaregories = formData.type === 'Income' ?  incomeCategories : expenseCategories; 
+  const selectedCaregories =
+    formData.type === "Income" ? incomeCategories : expenseCategories;
 
   // console.log("formData", formData);y
   return (
@@ -85,9 +100,11 @@ const Form = () => {
               setFormData({ ...formData, category: e.target.value })
             }
           >
-            { selectedCaregories.map((c) => 
-            <MenuItem key={c.type} value={c.type}>{c.type}</MenuItem>
-            )}
+            {selectedCaregories.map((c) => (
+              <MenuItem key={c.type} value={c.type}>
+                {c.type}
+              </MenuItem>
+            ))}
             {/* <MenuItem value="business">Business</MenuItem>
             <MenuItem value="salaty">Salaty</MenuItem> */}
           </Select>
@@ -110,14 +127,16 @@ const Form = () => {
           label="Date"
           fullWidth
           value={formData.date}
-          onChange={(e) => setFormData({ ...formData, date: formatDate(e.target.value) })}
+          onChange={(e) =>
+            setFormData({ ...formData, date: formatDate(e.target.value) })
+          }
         ></TextField>
       </Grid>
       <Button
         className={classes.button}
         variant="outlined"
         color="primary"
-        fullWidth 
+        fullWidth
         onClick={createTransaction}
       >
         Create
