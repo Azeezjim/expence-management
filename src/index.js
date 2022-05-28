@@ -1,17 +1,20 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { SpeechProvider } from "@speechly/react-client";
+
 import App from "./App";
 import "./index.css";
-
 import { Provider } from "./context/context";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <Provider>
-    {/* <React.StrictMode> */}
+  <SpeechProvider appId="6fc7d425-97a2-44f6-ad06-f3f81d8f97be" language="en-US ">
+    <Provider>
+      {/* <React.StrictMode> */}
       <App />
-    {/* </React.StrictMode> */}
-  </Provider>
+      {/* </React.StrictMode> */}
+    </Provider>
+  </SpeechProvider>
 );
 
 // If you want to start measuring performance in your app, pass a function
