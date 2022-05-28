@@ -1,3 +1,4 @@
+/* eslint-disable default-case */
 import React, { useContext, useState, useEffect } from "react";
 import {
   Grid,
@@ -63,8 +64,11 @@ const Form = () => {
       segment.entities.forEach((e) => {
         switch (e.type) {
           case "amount":
-            setFormData( ...formData, amount: e.value);
+          setFormData({ ...formData, amount: e.value });
             break;
+            case "category":
+              setFormData({ ...formData, category: e.value})
+              break;
         }
       })
     }
