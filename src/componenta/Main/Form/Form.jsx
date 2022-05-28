@@ -61,7 +61,7 @@ const Form = () => {
         return setFormData(initialState);
       }
       segment.entities.forEach((e) => {
-        console.log("entities", e.value);
+        switch (e.type)
       })
     }
   }, [segment]);
