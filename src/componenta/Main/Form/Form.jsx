@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import {
   Grid,
   Select,
@@ -44,18 +44,22 @@ const Form = () => {
     // addTransaction(); 
   };
 
-  const selectedCaregories = formData.type === 'Income' ? incomeCategories : expenseCategories; 
+  useEffect() = () => {
+    if(segment) {
+      if(segment.intent.intent === "add_expense"){
+        setFormData({ ...formData, type: "Expense"});
+      }
+    }
+  }, [segment]}
+
+  const selectedCaregories = formData.type === 'Income' ?  incomeCategories : expenseCategories; 
 
   // console.log("formData", formData);y
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
         <Typography align="center" variant="subtitle2" gutterBottom>
-          {segment ? (
-            <>
-              {segment.words.map((w) => w.value).join(" ")}
-            </>
-          ) : null}
+          {segment && segment.words.map((w) => w.value).join(" ")}
         </Typography>
       </Grid>
 
