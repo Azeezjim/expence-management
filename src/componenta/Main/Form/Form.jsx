@@ -61,7 +61,11 @@ const Form = () => {
         return setFormData(initialState);
       }
       segment.entities.forEach((e) => {
-        switch (e.type)
+        switch (e.type) {
+          case "amount":
+            setFormData( ...formData, amount: e.value);
+            break;
+        }
       })
     }
   }, [segment]);
