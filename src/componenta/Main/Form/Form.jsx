@@ -60,9 +60,9 @@ const Form = () => {
       } else if (segment.isFinal && segment.intent.intent) {
         return setFormData(initialState);
       }
-      segment.entities.forEach(e) => {
+      segment.entities.forEach((e) => {
         console.log("entities", e.value);
-      }
+      })
     }
   }, [segment]);
 
