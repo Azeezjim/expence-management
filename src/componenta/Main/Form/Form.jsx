@@ -64,13 +64,18 @@ const Form = () => {
       segment.entities.forEach((e) => {
         switch (e.type) {
           case "amount":
-          setFormData({ ...formData, amount: e.value });
+            setFormData({ ...formData, amount: e.value });
             break;
-            case "category":
-              setFormData({ ...formData, category: e.value})
-              break;
+          case "category":
+            setFormData({ ...formData, category: e.value });
+            break;
+          case "date":
+            setFormData({ ...formData, date: e.value });
+            break;
+          default:
+            break;
         }
-      })
+      });
     }
   }, [segment]);
 

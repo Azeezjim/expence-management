@@ -14,7 +14,7 @@ const Main = () => {
         <Typography align='center' variant='h5' >Total Balance $1100</Typography>
         <Typography variant='subtitle1' style={{ lineHeight: "1.5em", marginTop: "20px"}}>
           {/* info card  */}
-          {/* Try saying :  Add income to catigory  */}
+          {/* Try saying :  Add income to category  */}
         </Typography>
         <Divider />
         <Form/> 

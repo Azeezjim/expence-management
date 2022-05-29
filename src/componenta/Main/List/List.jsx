@@ -14,21 +14,21 @@ const List = () => {
   //   {
   //     id: 1,
   //     type: "Income",
-  //     catigory : "Business",
+  //     category : "Business",
   //     amount: 50,
   //     date: "Mon May 09 2022" 
   //   },
   //   {
   //     id: 2,
   //     type: "Expense",
-  //     catigory : "Business",
+  //     category : "Business",
   //     amount: 50,
   //     date: "May 09 2022" 
   //   },
   //   {
   //     id: 3,
   //     type: "Income",
-  //     catigory : "Business",
+  //     category : "Business",
   //     amount: 50,
   //     date: "Mon May 09 2022" 
   //   }
