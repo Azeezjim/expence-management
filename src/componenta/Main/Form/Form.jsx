@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable default-case */
 import React, { useContext, useState, useEffect } from "react";
 import {
@@ -62,12 +63,19 @@ const Form = () => {
         return setFormData(initialState);
       }
       segment.entities.forEach((e) => {
-        const category = `${e.value.charAt(0)}${e.value.slice(1).toLowerCase()}`
+        const category = `${e.value.charAt(0)}${e.value.slice(1).toLowerCase()}`;
+
+
         switch (e.type) {
           case "amount":
             setFormData({ ...formData, amount: e.value });
             break;
           case "category":
+            if(incomeCategories.map((iC) => iC.type).includes(category)) {
+              setFormData( { ...formData, type: "Income", category})
+            } else if (expenseCategories.map((eC) => eC.type).includes(category)) {
+              setFormData( { ...formData, type: "Expense", category})
+            }
             setFormData({ ...formData, category: e.value });
             break;
           case "date":
@@ -84,7 +92,7 @@ const Form = () => {
   const selectedCaregories =
     formData.type === "Income" ? incomeCategories : expenseCategories;
 
-  // console.log("formData", formData);y
+  // console.log("formData", formData);
   return (
     <Grid container spacing={2}>
       <Grid item xs={12}>
