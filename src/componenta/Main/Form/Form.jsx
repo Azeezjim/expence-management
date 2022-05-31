@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 /* eslint-disable default-case */
 import React, { useContext, useState, useEffect } from "react";
@@ -38,8 +39,8 @@ const Form = () => {
 
   const createTransaction = () => {
     if(Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) return;
-       
-    const transaction = {
+
+    const createTransaction = {
       ...formData,
       amount: Number(formData.amount),
       id: uuidv4(),
@@ -65,6 +66,7 @@ const Form = () => {
 
       segment.entities.forEach((e) => {
         const category = `${e.value.charAt(0)}${e.value.slice(1).toLowerCase()}`;
+        
         switch (e.type) {
           case "amount":
             setFormData({ ...formData, amount: e.value });
@@ -80,13 +82,13 @@ const Form = () => {
           case "date":
             setFormData({ ...formData, date: e.value });
             break;
-
           default:
             break;
         }
       });
+
       if (segment.isFinal && formData.amount && formData.category && formData.type) {
-        return createTransaction();
+        createTransaction();
       }
     }
   }, [segment]);
