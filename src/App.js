@@ -18,16 +18,16 @@ function App() {
         justifyContent="center"
         style={{ height: "100vh" }}
       >
-        <Grid item xs={12} sm={2} >
+        <Grid item xs={12} sm={4} className={classes.mobile}>
           <Details title="Income" />
         </Grid>
-        <Grid item xs={12} sm={3} >
+        <Grid item xs={12} sm={3}  classNam={classes.main}>
           <Main />
         </Grid>
-        {/* <Grid item xs={12} sm={4} >
+        <Grid item xs={12} sm={4}  className={classes.desktop}>
           <Details title="Income" />
-        </Grid> */}
-        <Grid item xs={12} sm={2} >
+        </Grid>
+        <Grid item xs={12} sm={4} className={classes.last}>
           <Details title="Expense" />
         </Grid>
       </Grid>
@@ -36,7 +36,7 @@ function App() {
         <ErrorPanel /> 
       </PushToTalkButtonContainer>
     </div>
-  );
+  ); 
 }
 
 export default App;
