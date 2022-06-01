@@ -23,6 +23,7 @@ import { useSpeechContext } from "@speechly/react-client";
 
 import useStyles from "./styles";
 import { AirlineSeatLegroomNormalTwoTone } from "@material-ui/icons";
+import CustomizeSnackbar from "../../Snackbar/Snackbar";
 
 const initialState = {
   amount: "",
@@ -36,16 +37,19 @@ const Form = () => {
   const [formData, setFormData] = useState(initialState);
   const { addTransaction } = useContext(ExpenseTrackerContext);
   const { segment } = useSpeechContext();
+  const {open, setOpen} = useState(false)
 
   const createTransaction = () => {
     // if(Number.isNaN(Number(formData.amount)) || !formData   .date.includes("/")) return;
 
-    const createTransaction = {
+    const transaction = {
       ...formData,
       amount: Number(formData.amount),
       id: uuidv4(),
       // category: formData.category  
     };
+     
+    setOpen(true)
     addTransaction(transaction);
     setFormData(initialState);
 
@@ -99,6 +103,7 @@ const Form = () => {
   // console.log("formData", formData);
   return (
     <Grid container spacing={2}>
+      <CustomizeSnackbar open={open} setOpen={setOpen} />
       <Grid item xs={12}>
         <Typography align="center" variant="subtitle2" gutterBottom>
           {segment && segment.words.map((w) => w.value).join(" ")}

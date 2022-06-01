@@ -14,13 +14,13 @@ const CustomizeSnackbar = (open, setOpen) => {
   return (
     <div className={classses.root}>
       <Snackbar
-        anchorOrigin={{vaticla:'top', horizuntal: 'right' }}
+        anchorOrigin={{ vertical:'top', horizontal: 'right' }}
         open={open}
         autoHideDuration={3000}
         onClick={handleClose}
       >
         <MuiAlert onClick={handleClose} security= 'success' elevation={6} varient="filled">
-
+          Transaction successfully created
         </MuiAlert>
       </Snackbar>
     </div>
