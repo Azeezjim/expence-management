@@ -1,5 +1,7 @@
+import React, {useRef, useEffect} from 'react'
 import Details from "./componenta/Details/Details";
 import Main from "./componenta/Main/Main";
+import {Speech}
 
 
 import { Grid } from "@material-ui/core";
@@ -8,6 +10,11 @@ import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speech
 
 
 function App() {
+
+
+  useEffect(() => {
+
+  }, [])
   const classes = useStyles();
   return (
     <div>
