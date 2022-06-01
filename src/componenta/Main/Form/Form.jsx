@@ -38,7 +38,7 @@ const Form = () => {
   const { segment } = useSpeechContext();
 
   const createTransaction = () => {
-    if(Number.isNaN(Number(formData.amount)) || !formData.date.includes("-")) return;
+    // if(Number.isNaN(Number(formData.amount)) || !formData.date.includes("/")) return;
 
     const createTransaction = {
       ...formData,
