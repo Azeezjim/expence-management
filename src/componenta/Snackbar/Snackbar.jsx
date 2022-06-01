@@ -4,11 +4,25 @@ import MuiAlert from '@material-ui/lab/Alert'
 
 import useStyle from './styles'
 
-const CustomizeSnackbar = () => {
+const CustomizeSnackbar = (open, setOpen) => {
   const classses = useStyle()
+  const handleClose = (event, reason) => {
+      if( reason === 'clickaway') return;
+
+      setOpen(false)
+    }
   return (
-    <div>
-      
+    <div className={classses.root}>
+      <Snackbar
+        anchorOrigin={{vaticla:'top', horizuntal: 'right' }}
+        open={open}
+        autoHideDuration={3000}
+        onClick={handleClose}
+      >
+        <MuiAlert onClick={handleClose} security= 'success' elevation={6} varient="filled">
+
+        </MuiAlert>
+      </Snackbar>
     </div>
   )
 }
