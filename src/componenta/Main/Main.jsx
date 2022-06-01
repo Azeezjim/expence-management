@@ -20,7 +20,7 @@ const Main = () => {
           <InfoCard />
           {/* Try saying :  Add income to category  */}
         </Typography>
-        <Divider />
+        <Divider className={classes.Divider}/>
         <Form/> 
       </CardContent>
 
