@@ -1,7 +1,8 @@
 import React, {useRef, useEffect} from 'react'
 import Details from "./componenta/Details/Details";
 import Main from "./componenta/Main/Main";
-import {SpeechState, useSpeechContext} from '@speechly/react-client'
+import { SpeechState, useSpeechContext } from '@speechly/react-client'
+
 
 
 import { Grid } from "@material-ui/core";
@@ -10,6 +11,7 @@ import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speech
 
 
 function App() {
+  const classes = useStyles();
   const { speechState } = useSpeechContext();
   const main = useRef(null)
 
@@ -20,7 +22,7 @@ function App() {
       executeScroll();
     }
   }, [speechState]);
-  const classes = useStyles();
+  // const classes = useStyles();
   return (
     <div>
       <Grid 
