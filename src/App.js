@@ -4,7 +4,6 @@ import Main from "./componenta/Main/Main";
 import { SpeechState, useSpeechContext } from '@speechly/react-client'
 
 
-
 import { Grid } from "@material-ui/core";
 import  useStyles  from "./styles";
 import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speechly/react-ui'
@@ -12,24 +11,28 @@ import { PushToTalkButton, PushToTalkButtonContainer, ErrorPanel } from '@speech
 
 function App() {
   const classes = useStyles();
+
   const { speechState } = useSpeechContext();
   const main = useRef(null)
 
   const executeScroll = () => main.current.scrollIntoView()    
 
-  useEffect(() => {
-    if (speechState === SpeechState.Recording) {
-      executeScroll();
-    }
-  }, [speechState]);
+  // useEffect(() => {
+  //   if (speechState === SpeechState.Recording) {
+  //     executeScroll();
+  //   }
+  // }, [speechState]);
+
+  
   // const classes = useStyles();
+
   return (
     <div>
       <Grid 
         className={classes.grid}
         container spacing={0}
         alignItems="center"
-        justify="center"
+        justifyContent="center"
         style={{ height: "100vh" }}
       >
         <Grid item xs={12} sm={4} className={classes.mobile}  >
